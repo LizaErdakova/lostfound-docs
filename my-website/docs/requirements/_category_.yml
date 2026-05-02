@@ -1,7 +1,7 @@
 label: Требования
 position: 4
 collapsible: true
-collapsed: false
+collapsed: true
 link:
   type: generated-index
   description: Бизнес-, функциональные и нефункциональные требования Lost&Found MVP.

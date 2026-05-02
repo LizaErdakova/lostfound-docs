@@ -57,11 +57,10 @@ const config = {
           {
             id: 'lostfound',
             spec: 'api_specs/lostfound-openapi.yaml',
-            route: '/api/lostfound',
           },
         ],
         theme: {
-          primaryColor: '#1f6feb',
+          primaryColor: '#2e8555',
         },
       },
     ],
@@ -82,14 +81,14 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'docsSidebar',
+            type: 'doc',
+            docId: 'intro',
             position: 'left',
             label: 'Документация',
           },
           {
-            to: '/api/lostfound',
-            label: 'OpenAPI',
+            to: '/docs/api/rest-api',
+            label: 'API',
             position: 'left',
           },
           {
@@ -103,16 +102,16 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Разделы',
+            title: 'Документация',
             items: [
               {label: 'Карточка сервиса', to: '/docs/intro'},
-              {label: 'Требования', to: '/docs/category/требования'},
-              {label: 'API', to: '/docs/category/api'},
-              {label: 'Диаграммы', to: '/docs/category/uml'},
+              {label: 'API Reference', to: '/docs/api/rest-api'},
+              {label: 'Модель данных', to: '/docs/database/data-model'},
+              {label: 'ER-диаграмма', to: '/docs/database/er-diagram'},
             ],
           },
           {
-            title: 'Публикация',
+            title: 'Проект',
             items: [
               {
                 label: 'Репозиторий',
