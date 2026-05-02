@@ -1,0 +1,7 @@
+label: Данные
+position: 8
+collapsible: true
+collapsed: false
+link:
+  type: generated-index
+  description: Модель хранения данных и ER-диаграмма.

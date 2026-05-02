@@ -1,0 +1,7 @@
+label: Процессы
+position: 10
+collapsible: true
+collapsed: false
+link:
+  type: generated-index
+  description: BPMN, DMN и процесс Owner-check.

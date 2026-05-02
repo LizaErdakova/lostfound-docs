@@ -1,0 +1,8 @@
+node_modules/
+build/
+.docusaurus/
+.env
+.DS_Store
+_source_artifacts/
+my-website/_template_docs/
+answer5.5.txt

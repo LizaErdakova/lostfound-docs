@@ -1,0 +1,34 @@
+---
+title: ER-диаграмма
+sidebar_position: 2
+description: ER-диаграмма и draw.io-шаблон модели данных Lost&Found MVP.
+---
+
+import Drawio from '@theme/Drawio';
+import erTemplate from '!!raw-loader!../../src/drawio/lostfound-er.drawio';
+
+## Назначение диаграммы
+
+ER-диаграмма показывает ключевые сущности Lost&Found MVP, их атрибуты и связи.
+
+## Исходная диаграмма
+
+![ER-диаграмма](/img/diagrams/er-diagram.png)
+
+## Draw.io версия
+
+Ниже добавлен компактный draw.io-шаблон, чтобы в проекте был подключен и использован docusaurus-plugin-drawio.
+
+<Drawio content={erTemplate} toolbar="zoom layers lightbox" />
+
+## Основные сущности
+
+- Пользователь.
+- Объявление.
+- Категория.
+- Фото.
+- Отклик.
+- Диалог.
+- Сообщение.
+- Owner-check.
+- Жалоба.

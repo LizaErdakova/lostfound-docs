@@ -1,0 +1,7 @@
+label: Архитектура
+position: 7
+collapsible: true
+collapsed: false
+link:
+  type: generated-index
+  description: Архитектурные решения, платформизация и шаблоны описания компонентов.

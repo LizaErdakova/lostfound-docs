@@ -1,0 +1,7 @@
+label: Интерфейс
+position: 5
+collapsible: true
+collapsed: false
+link:
+  type: generated-index
+  description: Роуты, экраны и связи интерфейса с API.

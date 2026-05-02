@@ -1,0 +1,7 @@
+label: UML
+position: 9
+collapsible: true
+collapsed: false
+link:
+  type: generated-index
+  description: Use Case и sequence-диаграммы в виде изображений и PlantUML.

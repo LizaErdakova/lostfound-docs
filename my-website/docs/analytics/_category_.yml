@@ -1,0 +1,7 @@
+label: Аналитика
+position: 12
+collapsible: true
+collapsed: false
+link:
+  type: generated-index
+  description: Шаблон метрик продукта и качества.

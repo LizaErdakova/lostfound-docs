@@ -1,0 +1,7 @@
+label: Discovery
+position: 3
+collapsible: true
+collapsed: false
+link:
+  type: generated-index
+  description: Артефакты сбора и анализа требований для функциональности Owner-check.
