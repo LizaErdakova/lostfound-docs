@@ -1,0 +1,609 @@
+openapi: 3.0.3
+info:
+  title: Lost&Found MVP API
+  version: 1.0.0
+  description: |
+    В рамках данной версии описаны только 3 экрана:
+    - лента объявлений
+    - карточка объявления
+    - создание объявления
+tags:
+  - name: Объявления
+  - name: Справочники
+  - name: Медиа
+paths:
+  /api/categories:
+    get:
+      tags:
+        - Справочники
+      summary: Получить список категорий
+      description: Используется в фильтрах ленты и в форме создания объявления.
+      responses:
+        '200':
+          description: Список категорий успешно получен
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoriesResponse'
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /api/ads/search:
+    post:
+      tags:
+        - Объявления
+      summary: Получить список объявлений для ленты
+      description: |
+        Используется для:
+        - первичной загрузки ленты,
+        - поиска,
+        - фильтрации.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchAdsRequest'
+      responses:
+        '200':
+          description: Список объявлений успешно получен, в том числе может быть пустым
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchAdsResponse'
+        '400':
+          description: Некорректные параметры поиска
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /api/ads/{adId}:
+    get:
+      tags:
+        - Объявления
+      summary: Получить карточку объявления
+      description: >-
+        Возвращает полные текстовые данные объявления и массив photoUrls для
+        фотографий.
+      parameters:
+        - $ref: '#/components/parameters/AdIdPath'
+      responses:
+        '200':
+          description: Карточка объявления успешно получена
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdDetails'
+        '404':
+          description: Объявление не найдено
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /api/ads:
+    post:
+      tags:
+        - Объявления
+      summary: Создать объявление
+      description: Создаёт новое объявление типа «Потерял» или «Нашёл».
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAdRequest'
+      responses:
+        '201':
+          description: Объявление успешно создано
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateAdResponse'
+        '400':
+          description: Ошибка валидации данных формы
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Требуется авторизация
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Бизнес-ошибка (например, точка вне Москвы)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /api/ads/{adId}/responses:
+    post:
+      tags:
+        - Объявления
+      summary: Откликнуться на объявление
+      description: Создаёт отклик на объявление.
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/AdIdPath'
+      responses:
+        '204':
+          description: Отклик успешно создан
+        '401':
+          description: Требуется авторизация
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Объявление не найдено
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '409':
+          description: Отклик невозможен, например объявление уже закрыто
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /api/ads/{adId}/reports:
+    post:
+      tags:
+        - Объявления
+      summary: Пожаловаться на объявление
+      description: Создаёт жалобу на конкретное объявление.
+      security:
+        - BearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/AdIdPath'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAdReportRequest'
+      responses:
+        '204':
+          description: Жалоба успешно отправлена
+        '400':
+          description: Некорректные данные жалобы
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Требуется авторизация
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Объявление не найдено
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /api/media/photos:
+    post:
+      tags:
+        - Медиа
+      summary: Загрузить фото
+      description: >
+        Загружает фотографию отдельно от публикации объявления
+
+        и возвращает photoId. Этот идентификатор затем передаётся в photoIds при
+        создании объявления.
+
+        До публикации объявления фотография хранится как временная и может быть
+        удалена, если не была использована при создании объявления.
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: Фото успешно загружено
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadPhotoResponse'
+        '400':
+          description: Файл не передан или повреждён
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Требуется авторизация
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '413':
+          description: Размер файла превышает допустимый лимит
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '415':
+          description: Неподдерживаемый тип файла
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    AdIdPath:
+      name: adId
+      in: path
+      required: true
+      description: Идентификатор объявления
+      schema:
+        type: string
+        format: uuid
+  schemas:
+    AdType:
+      type: string
+      description: Тип объявления
+      enum:
+        - lost
+        - found
+    AdStatus:
+      type: string
+      description: Статус объявления
+      enum:
+        - active
+        - closed
+    ReportReason:
+      type: string
+      description: Причина жалобы
+      enum:
+        - spam
+        - fraud
+        - personal_data
+        - other
+    LocationSource:
+      type: string
+      description: Способ указания места
+      enum:
+        - map
+        - manual
+    ErrorCode:
+      type: string
+      description: Код ошибки
+      enum:
+        - validation_error
+        - unauthorized
+        - not_found
+        - conflict
+        - file_too_large
+        - unsupported_media_type
+        - out_of_moscow
+        - internal_error
+    Category:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+          example: Документы
+    CategoriesResponse:
+      type: object
+      required:
+        - items
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
+    Location:
+      type: object
+      required:
+        - city
+        - district
+        - addressText
+        - source
+      properties:
+        city:
+          type: string
+          example: Москва
+        district:
+          type: string
+          example: Тверской
+        addressText:
+          type: string
+          example: м. Белорусская, у выхода №2
+        latitude:
+          type: number
+          format: double
+          nullable: true
+          example: 55.7764
+        longitude:
+          type: number
+          format: double
+          nullable: true
+          example: 37.5849
+        source:
+          $ref: '#/components/schemas/LocationSource'
+    PaginationRequest:
+      type: object
+      required:
+        - page
+        - pageSize
+      properties:
+        page:
+          type: integer
+          minimum: 1
+          example: 1
+        pageSize:
+          type: integer
+          minimum: 1
+          maximum: 50
+          example: 10
+    PaginationResponse:
+      type: object
+      required:
+        - page
+        - pageSize
+        - hasNext
+      properties:
+        page:
+          type: integer
+          example: 1
+        pageSize:
+          type: integer
+          example: 10
+        hasNext:
+          type: boolean
+          example: true
+    AdsFilter:
+      type: object
+      description: Фильтры ленты объявлений
+      properties:
+        status:
+          type: string
+          enum:
+            - active
+            - closed
+          default: active
+          description: По умолчанию используются только активные объявления
+        type:
+          $ref: '#/components/schemas/AdType'
+        categoryId:
+          type: string
+          format: uuid
+        dateFrom:
+          type: string
+          format: date-time
+        dateTo:
+          type: string
+          format: date-time
+        district:
+          type: string
+        radiusKm:
+          type: number
+          format: float
+        text:
+          type: string
+          example: Серый рюкзак
+    SearchAdsRequest:
+      type: object
+      required:
+        - pagination
+      properties:
+        pagination:
+          $ref: '#/components/schemas/PaginationRequest'
+        filters:
+          $ref: '#/components/schemas/AdsFilter'
+    AdListItem:
+      type: object
+      required:
+        - id
+        - status
+        - type
+        - category
+        - placeShort
+        - shortDescription
+        - eventAt
+      properties:
+        id:
+          type: string
+          format: uuid
+        status:
+          $ref: '#/components/schemas/AdStatus'
+        type:
+          $ref: '#/components/schemas/AdType'
+        category:
+          $ref: '#/components/schemas/Category'
+        placeShort:
+          type: string
+          example: Тверской район
+        shortDescription:
+          type: string
+          example: Потерян серый рюкзак с одной красной лямкой
+        eventAt:
+          type: string
+          format: date-time
+        previewPhotoUrl:
+          type: string
+          format: uri
+          nullable: true
+          description: >-
+            Ссылка на первую фотографию объявления для показа в ленте. Если фото
+            нет, поле равно null.
+    SearchAdsResponse:
+      type: object
+      required:
+        - items
+        - pagination
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdListItem'
+        pagination:
+          $ref: '#/components/schemas/PaginationResponse'
+    AdDetails:
+      type: object
+      required:
+        - id
+        - status
+        - type
+        - category
+        - eventAt
+        - location
+        - description
+        - photoUrls
+      properties:
+        id:
+          type: string
+          format: uuid
+        status:
+          $ref: '#/components/schemas/AdStatus'
+        type:
+          $ref: '#/components/schemas/AdType'
+        category:
+          $ref: '#/components/schemas/Category'
+        eventAt:
+          type: string
+          format: date-time
+        location:
+          $ref: '#/components/schemas/Location'
+        description:
+          type: string
+          example: Потерян серый рюкзак с красной лямкой, внутри были тетради и зарядка
+        photoUrls:
+          type: array
+          items:
+            type: string
+            format: uri
+          description: >-
+            Список ссылок на фотографии объявления. Если фото нет, возвращается
+            пустой массив.
+    CreateAdRequest:
+      type: object
+      required:
+        - type
+        - categoryId
+        - eventAt
+        - location
+        - description
+      properties:
+        type:
+          $ref: '#/components/schemas/AdType'
+        categoryId:
+          type: string
+          format: uuid
+        eventAt:
+          type: string
+          format: date-time
+        location:
+          $ref: '#/components/schemas/Location'
+        description:
+          type: string
+          maxLength: 2000
+        photoIds:
+          type: array
+          description: Список идентификаторов ранее загруженных фотографий.
+          items:
+            type: string
+            format: uuid
+    CreateAdResponse:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+          format: uuid
+    UploadPhotoResponse:
+      type: object
+      required:
+        - photoId
+      properties:
+        photoId:
+          type: string
+          format: uuid
+    CreateAdReportRequest:
+      type: object
+      required:
+        - reason
+      properties:
+        reason:
+          $ref: '#/components/schemas/ReportReason'
+        comment:
+          type: string
+          maxLength: 1000
+    ErrorResponse:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          $ref: '#/components/schemas/ErrorCode'
+        message:
+          type: string

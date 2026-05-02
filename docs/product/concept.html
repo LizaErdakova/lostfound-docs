@@ -1,0 +1,627 @@
+<!doctype html><html lang=ru dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-product/concept" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.1"><title data-rh=true>Концепция Lost&Found | Lost&Found</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://LizaErdakova.github.io/lostfound-docs/img/docusaurus-social-card.jpg /><meta data-rh=true name=twitter:image content=https://LizaErdakova.github.io/lostfound-docs/img/docusaurus-social-card.jpg /><meta data-rh=true property=og:url content=https://LizaErdakova.github.io/lostfound-docs/docs/product/concept /><meta data-rh=true property=og:locale content=ru /><meta data-rh=true name=docusaurus_locale content=ru /><meta data-rh=true name=docsearch:language content=ru /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Концепция Lost&Found | Lost&Found"/><meta data-rh=true name=description content="Описание идеи, целевой аудитории, бизнес-целей, MVP и ограничений продукта."/><meta data-rh=true property=og:description content="Описание идеи, целевой аудитории, бизнес-целей, MVP и ограничений продукта."/><link data-rh=true rel=icon href=/lostfound-docs/img/favicon.ico /><link data-rh=true rel=canonical href=https://LizaErdakova.github.io/lostfound-docs/docs/product/concept /><link data-rh=true rel=alternate href=https://LizaErdakova.github.io/lostfound-docs/docs/product/concept hreflang=ru /><link data-rh=true rel=alternate href=https://LizaErdakova.github.io/lostfound-docs/docs/product/concept hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://LizaErdakova.github.io/lostfound-docs/docs/category/продукт","name":"Продукт","position":1},{"@type":"ListItem","item":"https://LizaErdakova.github.io/lostfound-docs/docs/product/concept","name":"Концепция Lost&Found","position":2}]}</script><script src=https://cdn.jsdelivr.net/npm/docusaurus-plugin-drawio/viewer.min.js></script><link rel=stylesheet href=/lostfound-docs/assets/css/styles.b654b40f.css /><script src=/lostfound-docs/assets/js/runtime~main.cf8ec13b.js defer></script><script src=/lostfound-docs/assets/js/main.92cd4d1c.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-4af")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/lostfound-docs/img/logo.svg /><div role=region aria-label="Перейти к основному содержимому"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Перейти к основному содержимому</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Переключить навигационную панель" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/lostfound-docs/><div class=navbar__logo><img src=/lostfound-docs/img/logo.svg alt=Lost&Found class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/lostfound-docs/img/logo.svg alt=Lost&Found class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">Lost&Found</b></a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/lostfound-docs/docs/intro>Документация</a><a class="navbar__item navbar__link" href=/lostfound-docs/api/lostfound>OpenAPI</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/LizaErdakova/lostfound-docs target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Переключение между темным и светлым режимом (сейчас используется system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=docsWrapper_hBAB><button aria-label="Прокрутка к началу" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class=sidebarViewport_aRkj><div class=sidebar_njMd><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/lostfound-docs/docs/intro><span title="Карточка сервиса" class=linkLabel_WmDU>Карточка сервиса</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href=/lostfound-docs/docs/category/продукт><span title=Продукт class=categoryLinkLabel_W154>Продукт</span></a><button aria-label="Collapse sidebar category 'Продукт'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/lostfound-docs/docs/product/concept><span title="Концепция Lost&Found" class=linkLabel_WmDU>Концепция Lost&Found</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist" href=/lostfound-docs/docs/category/discovery><span title=Discovery class=categoryLinkLabel_W154>Discovery</span></a><button aria-label="Collapse sidebar category 'Discovery'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/discovery/raci><span title="Матрица RACI" class=linkLabel_WmDU>Матрица RACI</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/discovery/interview-questions><span title="Вопросы для интервью" class=linkLabel_WmDU>Вопросы для интервью</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/discovery/event-storming><span title="Event Storming" class=linkLabel_WmDU>Event Storming</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist" href=/lostfound-docs/docs/category/требования><span title=Требования class=categoryLinkLabel_W154>Требования</span></a><button aria-label="Collapse sidebar category 'Требования'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/requirements/business-requirements><span title=Бизнес-требования class=linkLabel_WmDU>Бизнес-требования</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/requirements/functional-requirements><span title="Функциональные требования" class=linkLabel_WmDU>Функциональные требования</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/requirements/non-functional-requirements><span title="Нефункциональные требования" class=linkLabel_WmDU>Нефункциональные требования</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist" href=/lostfound-docs/docs/category/интерфейс><span title=Интерфейс class=categoryLinkLabel_W154>Интерфейс</span></a><button aria-label="Collapse sidebar category 'Интерфейс'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/ui/interface-mockups><span title="Макеты интерфейса" class=linkLabel_WmDU>Макеты интерфейса</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist" href=/lostfound-docs/docs/category/api><span title=API class=categoryLinkLabel_W154>API</span></a><button aria-label="Collapse sidebar category 'API'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/api/rest-api><span title="REST API" class=linkLabel_WmDU>REST API</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/api/async-api><span title="Асинхронное взаимодействие" class=linkLabel_WmDU>Асинхронное взаимодействие</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist" href=/lostfound-docs/docs/category/архитектура><span title=Архитектура class=categoryLinkLabel_W154>Архитектура</span></a><button aria-label="Collapse sidebar category 'Архитектура'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/architecture/platformization><span title=Платформизация class=linkLabel_WmDU>Платформизация</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/architecture/system-context><span title="Контекст системы" class=linkLabel_WmDU>Контекст системы</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/architecture/components><span title="Компоненты системы" class=linkLabel_WmDU>Компоненты системы</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist" href=/lostfound-docs/docs/category/данные><span title=Данные class=categoryLinkLabel_W154>Данные</span></a><button aria-label="Collapse sidebar category 'Данные'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/database/data-model><span title="Модель данных" class=linkLabel_WmDU>Модель данных</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/database/er-diagram><span title=ER-диаграмма class=linkLabel_WmDU>ER-диаграмма</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist" href=/lostfound-docs/docs/category/uml><span title=UML class=categoryLinkLabel_W154>UML</span></a><button aria-label="Collapse sidebar category 'UML'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/diagrams/use-case><span title="Use Case диаграмма" class=linkLabel_WmDU>Use Case диаграмма</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/diagrams/sequence><span title="Sequence диаграмма" class=linkLabel_WmDU>Sequence диаграмма</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist" href=/lostfound-docs/docs/category/процессы><span title=Процессы class=categoryLinkLabel_W154>Процессы</span></a><button aria-label="Collapse sidebar category 'Процессы'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/processes/owner-check-bpmn><span title="BPMN/DMN Owner-check" class=linkLabel_WmDU>BPMN/DMN Owner-check</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist" href=/lostfound-docs/docs/category/тестирование><span title=Тестирование class=categoryLinkLabel_W154>Тестирование</span></a><button aria-label="Collapse sidebar category 'Тестирование'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/testing/test-strategy><span title="Стратегия тестирования" class=linkLabel_WmDU>Стратегия тестирования</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist" href=/lostfound-docs/docs/category/аналитика><span title=Аналитика class=categoryLinkLabel_W154>Аналитика</span></a><button aria-label="Collapse sidebar category 'Аналитика'" aria-expanded=true type=button class="clean-btn menu__caret"></button></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/lostfound-docs/docs/analytics/metrics><span title="Метрики продукта" class=linkLabel_WmDU>Метрики продукта</span></a></ul></ul></nav></div></div></aside><main class=docMainContainer_TBSr><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Навигационная цепочка текущей страницы"><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Главная страница" class=breadcrumbs__link href=/lostfound-docs/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_YNFT><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><a class=breadcrumbs__link href=/lostfound-docs/docs/category/продукт><span>Продукт</span></a><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>Концепция Lost&Found</span></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type=button class="clean-btn tocCollapsibleButton_TO0P">Содержание этой страницы</button></div><div class="theme-doc-markdown markdown"><header><h1>Концепция Lost&Found</h1></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=lostfound--платформа-поиска-потерянных-вещей-и-домашних-животных>Lost&Found – платформа поиска потерянных вещей и домашних животных.<a href=#lostfound--платформа-поиска-потерянных-вещей-и-домашних-животных class=hash-link aria-label="Прямая ссылка на Lost&Found – платформа поиска потерянных вещей и домашних животных." title="Прямая ссылка на Lost&Found – платформа поиска потерянных вещей и домашних животных." translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=бизнес-требования>Бизнес-требования<a href=#бизнес-требования class=hash-link aria-label="Прямая ссылка на Бизнес-требования" title="Прямая ссылка на Бизнес-требования" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-описание-проблемы>1. Описание проблемы<a href=#1-описание-проблемы class=hash-link aria-label="Прямая ссылка на 1. Описание проблемы" title="Прямая ссылка на 1. Описание проблемы" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=проблема>Проблема<a href=#проблема class=hash-link aria-label="Прямая ссылка на Проблема" title="Прямая ссылка на Проблема" translate=no>​</a></h3>
+<p>Пользователи регулярно сталкиваются с потерей личных вещей и домашних животных. В таких ситуациях ключевая сложность не отсутствие информации, а то, что она оказывается разрозненной и плохо сопоставимой.</p>
+<p>С одной стороны, владелец пытается восстановить маршрут и найти сообщения о находках. С другой стороны, человек, который обнаружил находку или заметил животное, часто не понимает, куда и как правильно об этом сообщить, чтобы информация дошла до владельца и не создала рисков для обеих сторон.</p>
+<p>Сейчас поиск и возврат чаще всего происходят через набор несвязанных площадок: локальные чаты, сообщества, доски объявлений, сайты, а также отдельные бюро находок у организаций (транспорт, торговые центры, другие учреждения). Эти источники не объединены в единое пространство и редко предоставляют удобные инструменты для поиска по местоположению и времени, из-за чего пользователи тратят много времени на ручной просмотр ленты и повторяющиеся публикации в разных местах. Для животных дополнительно значимы скорость распространения информации и возможность привязывать наблюдения к местоположению, чтобы сузить зону поиска.</p>
+<p>Отдельный важный аспект – безопасность. При публикации объявлений о находке люди не готовы указывать точное место хранения вещи или раскрывать личные контакты из-за риска передачи находки постороннему лицу. В результате информация часто публикуется неполно или не публикуется вовсе.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=потребности-и-боли>Потребности и боли<a href=#потребности-и-боли class=hash-link aria-label="Прямая ссылка на Потребности и боли" title="Прямая ссылка на Потребности и боли" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Разрозненность информации.</strong> Объявления и сообщения находятся в разных каналах и не объединяются в один поиск.</p>
+</li>
+<li class="">
+<p><strong>Низкая сопоставимость.</strong> Нет единого формата и структурных полей (где/когда/приметы), из-за чего совпадения приходится искать вручную.</p>
+</li>
+<li class="">
+<p><strong>Слабая привязка к месту и времени.</strong> У людей не получается нормально искать в определенном радиусе и по интервалу времени, а без этого вероятность совпадений падает.</p>
+</li>
+<li class="">
+<p><strong>Риски при передаче.</strong> Люди не хотят публично указывать контакты и детали (точное место хранения, содержимое и т. п.), а без понятного безопасного механизма вещи так и остаются не найденными.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=текущие-альтернативы>Текущие альтернативы<a href=#текущие-альтернативы class=hash-link aria-label="Прямая ссылка на Текущие альтернативы" title="Прямая ссылка на Текущие альтернативы" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Бюро находок транспорта и инфраструктуры</strong>: метро/московский транспорт, РЖД, аэропорты – у каждого свой сайт/канал и свои правила обращения.</p>
+</li>
+<li class="">
+<p><strong>Сервисы по поиску животных</strong>: <strong>Pet911</strong>, <strong>mos.ru</strong> – помогают именно с животными.</p>
+</li>
+<li class="">
+<p><strong>Группы “нашёл/потерял” в VK и Telegram</strong> – публикации в сообществах и чатах.</p>
+</li>
+<li class="">
+<p><strong>Сайты объявлений</strong>  – объявления о находках/пропажах как обычные публикации.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=почему-текущие-решения-недостаточны>Почему текущие решения недостаточны<a href=#почему-текущие-решения-недостаточны class=hash-link aria-label="Прямая ссылка на Почему текущие решения недостаточны" title="Прямая ссылка на Почему текущие решения недостаточны" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p><strong>Нет единой карты и нормальных фильтров</strong>: в большинстве решений нельзя удобно искать по району/радиусу и по времени.</p>
+</li>
+<li class="">
+<p><strong>Сервисы организаций работают только в своих границах</strong>: бюро находок транспорта/аэропортов/ТЦ покрывают только свой объект и не объединяют данные между собой.</p>
+</li>
+<li class="">
+<p><strong>Pet911 и mos.ru не закрывают вещи и документы</strong>: это отдельная ниша, которая не решает проблему потерянных предметов.</p>
+</li>
+<li class="">
+<p><strong>В группах хаос по формату</strong>: объявления пишут по-разному, из-за этого сложно сравнивать и искать, посты быстро уходят вниз по ленте, актуальность неясна.</p>
+</li>
+<li class="">
+<p><strong>Нет безопасного процесса передачи</strong>: нет встроенной проверки владельца и безопасного общения – приходится обмениваться контактами, что повышает риск ошибочной передачи и мошенничества.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2-целевая-аудитория>2. Целевая аудитория<a href=#2-целевая-аудитория class=hash-link aria-label="Прямая ссылка на 2. Целевая аудитория" title="Прямая ссылка на 2. Целевая аудитория" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=сегменты-аудитории>Сегменты аудитории<a href=#сегменты-аудитории class=hash-link aria-label="Прямая ссылка на Сегменты аудитории" title="Прямая ссылка на Сегменты аудитории" translate=no>​</a></h3>
+<ol>
+<li class="">
+<p><strong>Люди, потерявшие вещь или домашнее животное.</strong>
+Пользователи, которые размещают объявления о пропаже и ищут совпадения. Это ключевой сегмент для оценки ценности MVP: по нему измеряется, насколько быстро находятся релевантные объявления и как часто ситуации доходят до закрытия.</p>
+</li>
+<li class="">
+<p><strong>Люди, обнаружившие находку или заметившие животное.</strong>
+Пользователи, которые публикуют информацию о находке или наблюдении. Это второй ключевой сегмент MVP, именно он формирует вторую сторону, от которой зависит количество совпадений и скорость откликов.</p>
+</li>
+<li class="">
+<p><strong>Организации, работающие с находками (приюты, службы отлова, бюро находок при транспортных компаниях, торговых центрах и учреждениях).</strong>
+Могут использовать платформу для размещения информации о находках в рамках стандартного пользовательского функционала. В следующих версиях рассматриваются как сегмент для масштабирования и повышения доверия, будут отдельные сценарии для организаций и интеграции позволят увеличить объём официальных находок и ускорить возврат.</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=потребности-и-ожидания>Потребности и ожидания<a href=#потребности-и-ожидания class=hash-link aria-label="Прямая ссылка на Потребности и ожидания" title="Прямая ссылка на Потребности и ожидания" translate=no>​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=потерявшие>Потерявшие<a href=#потерявшие class=hash-link aria-label="Прямая ссылка на Потерявшие" title="Прямая ссылка на Потерявшие" translate=no>​</a></h4>
+<p>Ожидают, что платформа позволит:</p>
+<ul>
+<li class="">
+<p>разместить информацию о пропаже в понятной и структурированной форме;</p>
+</li>
+<li class="">
+<p>находить объявления о находках по месту и времени;</p>
+</li>
+<li class="">
+<p>получить отклик через систему без необходимости публиковать личный номер телефона в открытом доступе;</p>
+</li>
+<li class="">
+<p>понимать, находится ли объявление в активном статусе.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=нашедшие>Нашедшие<a href=#нашедшие class=hash-link aria-label="Прямая ссылка на Нашедшие" title="Прямая ссылка на Нашедшие" translate=no>​</a></h4>
+<p>Ожидают, что платформа позволит:</p>
+<ul>
+<li class="">
+<p>опубликовать информацию о находке без необходимости размещать её в нескольких источниках;</p>
+</li>
+<li class="">
+<p>общаться с потенциальным владельцем через систему, не раскрывая личные контакты публично;</p>
+</li>
+<li class="">
+<p>передать находку человеку, который сможет подтвердить, что это его вещь;</p>
+</li>
+<li class="">
+<p>завершить публикацию после передачи находки.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=организации-приюты-бюро-находок>Организации (приюты, бюро находок)<a href=#организации-приюты-бюро-находок class=hash-link aria-label="Прямая ссылка на Организации (приюты, бюро находок)" title="Прямая ссылка на Организации (приюты, бюро находок)" translate=no>​</a></h4>
+<p>Ожидают, что платформа позволит:</p>
+<ul>
+<li class="">
+<p>размещать информацию о находках в стандартизированном формате;</p>
+</li>
+<li class="">
+<p>получать обращения от владельцев через систему;</p>
+</li>
+<li class="">
+<p>фиксировать факт передачи находки и закрывать объявление.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-стейкхолдеры>3. Стейкхолдеры<a href=#3-стейкхолдеры class=hash-link aria-label="Прямая ссылка на 3. Стейкхолдеры" title="Прямая ссылка на 3. Стейкхолдеры" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=ключевые-стейкхолдеры>Ключевые стейкхолдеры<a href=#ключевые-стейкхолдеры class=hash-link aria-label="Прямая ссылка на Ключевые стейкхолдеры" title="Прямая ссылка на Ключевые стейкхолдеры" translate=no>​</a></h3>
+<ol>
+<li class="">
+<p><strong>Заказчик или инициатор проекта</strong>
+Определяет цели продукта и финансирование.</p>
+</li>
+<li class="">
+<p><strong>Пользователи</strong>
+Формируют основной контент и определяют ценность системы.</p>
+</li>
+<li class="">
+<p><strong>Организации-партнёры (приюты, транспортные компании, ТЦ)</strong>
+Потенциальные источники официальной информации о находках и партнёры по интеграции. В MVP организации могут размещать объявления как обычные пользователи; отдельные кабинеты и интеграции предусмотрены в следующих версиях (см. раздел 8).</p>
+</li>
+<li class="">
+<p><strong>Команда разработки (аналитик, разработчики, дизайнер)</strong>
+Отвечает за реализацию и развитие продукта.</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=роль-стейкхолдеров>Роль стейкхолдеров<a href=#роль-стейкхолдеров class=hash-link aria-label="Прямая ссылка на Роль стейкхолдеров" title="Прямая ссылка на Роль стейкхолдеров" translate=no>​</a></h3>
+<p><strong>Таблица 3-1 – Приоритет стейкхолдеров</strong></p>
+<table><thead><tr><th>Стейкхолдер<th>Приоритет при конфликте требований<th>Что делает<th>Как влияет на систему и решения<tbody><tr><td>Заказчик / Инициатор<td><strong>1 (решающий голос)</strong><td>Утверждает цели, бюджет, сроки, границы MVP.<td>Определяет KPI и приоритеты, принимает финальные решения.<tr><td>Пользователи (потерявшие / нашедшие)<td><strong>2 (ключевые для ценности)</strong><td>Публикуют объявления, ищут, откликаются, общаются, закрывают объявления, дают обратную связь о продукте.<td>Формируют контент и объявления, влияют на метрики (активность, скорость отклика, доля закрытий) и на развитие через обратную связь.<tr><td>Организации-партнёры (приюты, транспорт, ТЦ)<td><strong>3 (усиливают доверие и масштаб)</strong><td>В MVP размещают объявления вручную, как обычные пользователи, позже смогут через кабинеты или интеграции.<td>Повышают охват и доверие, дают официальные источники, их требования учитываются, но не должны расширять MVP за рамки согласованного.<tr><td>Команда разработки (аналитик, разработчик, дизайнер)<td><strong>4 (влияют через реализацию)</strong><td>Проектируют, разрабатывают, тестируют, выпускают продукт.<td>Влияют на решения через оценки сроков, стоимости, рисков, технических ограничений и качества реализации.</table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4-бизнес-цели-и-ключевые-метрики>4. Бизнес-цели и ключевые метрики<a href=#4-бизнес-цели-и-ключевые-метрики class=hash-link aria-label="Прямая ссылка на 4. Бизнес-цели и ключевые метрики" title="Прямая ссылка на 4. Бизнес-цели и ключевые метрики" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=основные-бизнес-цели>Основные бизнес-цели<a href=#основные-бизнес-цели class=hash-link aria-label="Прямая ссылка на Основные бизнес-цели" title="Прямая ссылка на Основные бизнес-цели" translate=no>​</a></h3>
+<p>Бизнес-цели проекта сформулированы с учётом принципов SMART и направлены на подтверждение ценности платформы для пользователей.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=цель-1-запустить-и-закрепить-активное-использование-платформы-в-москве>Цель 1. Запустить и закрепить активное использование платформы в Москве<a href=#цель-1-запустить-и-закрепить-активное-использование-платформы-в-москве class=hash-link aria-label="Прямая ссылка на Цель 1. Запустить и закрепить активное использование платформы в Москве" title="Прямая ссылка на Цель 1. Запустить и закрепить активное использование платформы в Москве" translate=no>​</a></h4>
+<p>В течение первых 6 месяцев после запуска получить не менее 500 активных объявлений в месяц по Москве. Москва выбрана как главный город, будет проще достичь активности и собрать обратную связь.
+<strong>Как влияет система:</strong> удобная форма публикации, карта, фильтры и поиск, которые помогают легко искать и повышают количество публикаций.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=цель-2-достичь-высокой-доли-успешных-возвратов>Цель 2. Достичь высокой доли успешных возвратов<a href=#цель-2-достичь-высокой-доли-успешных-возвратов class=hash-link aria-label="Прямая ссылка на Цель 2. Достичь высокой доли успешных возвратов" title="Прямая ссылка на Цель 2. Достичь высокой доли успешных возвратов" translate=no>​</a></h4>
+<p>Достичь доли закрытых объявлений (вещь возвращена / животное найдено) не менее 15% в течение первых 6 месяцев работы. Этот показатель покажет, что платформа не просто размещает объявления, а реально помогает пользователям в поиске.</p>
+<p><strong>Как влияет система:</strong> сопоставление по параметрам и поиск по карте повышают вероятность увидеть подходящее объявление.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=цель-3-повысить-скорость-первого-отклика-через-сопоставление-и-поиск>Цель 3. Повысить скорость первого отклика через сопоставление и поиск<a href=#цель-3-повысить-скорость-первого-отклика-через-сопоставление-и-поиск class=hash-link aria-label="Прямая ссылка на Цель 3. Повысить скорость первого отклика через сопоставление и поиск" title="Прямая ссылка на Цель 3. Повысить скорость первого отклика через сопоставление и поиск" translate=no>​</a></h4>
+<p>Обеспечить получение первого отклика не менее чем для 60% объявлений в течение 48 часов после публикации в течение первых 6 месяцев работы. Цель направлена на снижение времени поиска и повышение вероятности возврата.</p>
+<p><strong>Как влияет система:</strong> фильтры и карта помогают быстрее увидеть подходящие объявления, сопоставление показывает возможные совпадения прямо в карточке, а встроенный чат позволяет сразу написать без обмена телефонами, поэтому людям проще откликнуться.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=цель-4-сделать-создание-объявления-быстрым-и-простым>Цель 4. Сделать создание объявления быстрым и простым<a href=#цель-4-сделать-создание-объявления-быстрым-и-простым class=hash-link aria-label="Прямая ссылка на Цель 4. Сделать создание объявления быстрым и простым" title="Прямая ссылка на Цель 4. Сделать создание объявления быстрым и простым" translate=no>​</a></h4>
+<p>Обеспечить среднее время создания объявления не более 3 минут к моменту релиза MVP. Цель направлена на снижение барьера входа и повышение вовлечённости пользователей.</p>
+<p><strong>Как влияет система:</strong> структурированные поля, подсказки, автозаполнение/выбор точки на карте сокращают время ввода.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=ключевые-метрики-kpis>Ключевые метрики (KPIs)<a href=#ключевые-метрики-kpis class=hash-link aria-label="Прямая ссылка на Ключевые метрики (KPIs)" title="Прямая ссылка на Ключевые метрики (KPIs)" translate=no>​</a></h3>
+<p>Для оценки успешности продукта планируется использовать следующие показатели:</p>
+<ul>
+<li class="">
+<p>количество зарегистрированных пользователей;</p>
+</li>
+<li class="">
+<p>количество активных объявлений в месяц;</p>
+</li>
+<li class="">
+<p>доля объявлений со статусом «закрыто»;</p>
+</li>
+<li class="">
+<p>среднее время до первого отклика;</p>
+</li>
+<li class="">
+<p>среднее время создания объявления.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5-описание-продукта>5. Описание продукта<a href=#5-описание-продукта class=hash-link aria-label="Прямая ссылка на 5. Описание продукта" title="Прямая ссылка на 5. Описание продукта" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=51-общая-концепция>5.1 Общая концепция<a href=#51-общая-концепция class=hash-link aria-label="Прямая ссылка на 5.1 Общая концепция" title="Прямая ссылка на 5.1 Общая концепция" translate=no>​</a></h3>
+<p>Lost&Found - это веб-платформа для размещения и поиска объявлений о потерянных вещах и домашних животных.
+Платформа объединяет пользователей, столкнувшихся с потерей, и тех, кто обнаружил находку, в едином сервисе с возможностью сопоставления объявлений по описанию, категории, времени и геолокации.</p>
+<p>Lost&Found ценен тем, что решает четыре ключевые проблемы: убирает разрозненность каналов, приводит объявления к одному формату, позволяет искать по месту и времени, и даёт безопасный способ связаться и проверить владельца перед передачей.</p>
+<p>Пользователь, потерявший вещь или животное, размещает объявление с указанием характеристик и предполагаемого места. Система сопоставляет его с уже опубликованными объявлениями о находках и показывает пользователю список возможных совпадений.</p>
+<p>Пользователь, обнаруживший предмет или животное, публикует объявление о находке и получает отклики. Перед передачей предусмотрен механизм подтверждения того, что с ним связался реальный владелец.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=52-ключевые-функции>5.2 Ключевые функции<a href=#52-ключевые-функции class=hash-link aria-label="Прямая ссылка на 5.2 Ключевые функции" title="Прямая ссылка на 5.2 Ключевые функции" translate=no>​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-размещение-объявлений-о-потере-и-находке>1. Размещение объявлений о потере и находке<a href=#1-размещение-объявлений-о-потере-и-находке class=hash-link aria-label="Прямая ссылка на 1. Размещение объявлений о потере и находке" title="Прямая ссылка на 1. Размещение объявлений о потере и находке" translate=no>​</a></h4>
+<ul>
+<li class="">
+<p>выбор категории (вещи, документы, животные и др.);</p>
+</li>
+<li class="">
+<p>заполнение ключевых характеристик(цвет, бренд, приметы и т.д.);</p>
+</li>
+<li class="">
+<p>указание времени и места (с отображением на карте);</p>
+</li>
+<li class="">
+<p>загрузка фотографий с учётом ограничений для некоторых категорий (документы, ключи и т.д.) .</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=2-карта-объявлений>2. Карта объявлений<a href=#2-карта-объявлений class=hash-link aria-label="Прямая ссылка на 2. Карта объявлений" title="Прямая ссылка на 2. Карта объявлений" translate=no>​</a></h4>
+<ul>
+<li class="">
+<p>отображение потерянных и найденных объектов на карте;</p>
+</li>
+<li class="">
+<p>фильтрация по категории, радиусу, времени публикации;</p>
+</li>
+<li class="">
+<p>переход к карточке объявления с возможностью отклика.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-автоматическое-сопоставление-объявлений>3. Автоматическое сопоставление объявлений<a href=#3-автоматическое-сопоставление-объявлений class=hash-link aria-label="Прямая ссылка на 3. Автоматическое сопоставление объявлений" title="Прямая ссылка на 3. Автоматическое сопоставление объявлений" translate=no>​</a></h4>
+<p>Система рассчитывает совпадения на основе:</p>
+<ul>
+<li class="">
+<p>географической близости;</p>
+</li>
+<li class="">
+<p>временного интервала между потерей и находкой;</p>
+</li>
+<li class="">
+<p>совпадения категории;</p>
+</li>
+<li class="">
+<p>совпадения ключевых характеристик (цвет, модель, порода, приметы и др.).</p>
+</li>
+</ul>
+<p>При достижении порога система отображает возможные совпадения в интерфейсе.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=4-механизм-проверки-владельца-owner-check>4. Механизм проверки владельца (owner-check)<a href=#4-механизм-проверки-владельца-owner-check class=hash-link aria-label="Прямая ссылка на 4. Механизм проверки владельца (owner-check)" title="Прямая ссылка на 4. Механизм проверки владельца (owner-check)" translate=no>​</a></h4>
+<p>Для снижения риска ошибочной передачи находки реализован механизм подтверждения. Проверяется не личность по документам, а знание деталей, которые с высокой вероятностью известны только владельцу.</p>
+<p><strong>Как устроено:</strong></p>
+<ol>
+<li class="">
+<p>Нашедший при отклике выбирает 2–3 контрольных вопроса из шаблонов или пишет свой вопрос.</p>
+</li>
+<li class="">
+<p>Потерявший отвечает внутри платформы.</p>
+</li>
+<li class="">
+<p>После ответов у нашедшего появляется кнопка:</p>
+<ul>
+<li class="">Подтвердить владельца / Не подтверждать.</li>
+</ul>
+</li>
+<li class="">
+<p>Пока владелец не подтверждён:</p>
+<ul>
+<li class="">
+<p>чат ограниченный (без телефона/ссылок/адреса хранения),</p>
+</li>
+<li class="">
+<p>в карточке находки не показывается точное место хранения (если оно было указано нашедшим).</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=5-безопасное-взаимодействие>5. Безопасное взаимодействие<a href=#5-безопасное-взаимодействие class=hash-link aria-label="Прямая ссылка на 5. Безопасное взаимодействие" title="Прямая ссылка на 5. Безопасное взаимодействие" translate=no>​</a></h4>
+<ul>
+<li class="">
+<p>общение внутри платформы без раскрытия личных контактов;</p>
+</li>
+<li class="">
+<p>ограничение передачи персональных данных на этапе до подтверждения;</p>
+</li>
+<li class="">
+<p>возможность подачи жалобы.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6-риски>6. Риски<a href=#6-риски class=hash-link aria-label="Прямая ссылка на 6. Риски" title="Прямая ссылка на 6. Риски" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=61-продуктовые-риски>6.1. Продуктовые риски<a href=#61-продуктовые-риски class=hash-link aria-label="Прямая ссылка на 6.1. Продуктовые риски" title="Прямая ссылка на 6.1. Продуктовые риски" translate=no>​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-недостаточное-количество-объявлений>1) Недостаточное количество объявлений<a href=#1-недостаточное-количество-объявлений class=hash-link aria-label="Прямая ссылка на 1) Недостаточное количество объявлений" title="Прямая ссылка на 1) Недостаточное количество объявлений" translate=no>​</a></h4>
+<p><strong>Риск:</strong> при низком количестве активных объявлений снижается вероятность совпадений и ценность сервиса.
+<strong>Минимизация:</strong></p>
+<ul>
+<li class="">
+<p>Запуск в одном регионе (Москва) и локальное продвижение;</p>
+</li>
+<li class="">
+<p>Упрощённая форма публикации и понятные поля;</p>
+</li>
+<li class="">
+<p>Поиск и фильтры, чтобы пользователи быстро находили подходящее объявление.</p>
+</li>
+</ul>
+<p><strong>Реакция (если риск произошёл):</strong></p>
+<ul>
+<li class="">
+<p>Уточнить категории/поля формы, чтобы повысить качество объявлений;</p>
+</li>
+<li class="">
+<p>Ввести подсказки при создании;</p>
+</li>
+<li class="">
+<p>Подключить ручные партнёрские размещения.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=2-отсутствие-устойчивой-активности>2) Отсутствие устойчивой активности<a href=#2-отсутствие-устойчивой-активности class=hash-link aria-label="Прямая ссылка на 2) Отсутствие устойчивой активности" title="Прямая ссылка на 2) Отсутствие устойчивой активности" translate=no>​</a></h4>
+<p><strong>Риск:</strong> пользователи заходят один раз, база не обновляется, объявления застаиваются.
+<strong>Минимизация:</strong></p>
+<ul>
+<li class="">
+<p>Показ совпадений в интерфейсе по объявлению;</p>
+</li>
+<li class="">
+<p>Понятные статусы и закрытие объявлений;</p>
+</li>
+<li class="">
+<p>Минимум шагов до публикации.</p>
+</li>
+</ul>
+<p><strong>Реакция (если риск произошёл):</strong></p>
+<ul>
+<li class="">
+<p>Добавить редактирование объявления (актуализация);</p>
+</li>
+<li class="">
+<p>Добавить напоминания о статусе/актуальности;</p>
+</li>
+<li class="">
+<p>Пересмотреть правила жизненного цикла объявлений (архивирование/продление).</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=62-риски-доверия-и-безопасности>6.2. Риски доверия и безопасности<a href=#62-риски-доверия-и-безопасности class=hash-link aria-label="Прямая ссылка на 6.2. Риски доверия и безопасности" title="Прямая ссылка на 6.2. Риски доверия и безопасности" translate=no>​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-низкий-уровень-доверия--риск-мошенничества>3) Низкий уровень доверия / риск мошенничества<a href=#3-низкий-уровень-доверия--риск-мошенничества class=hash-link aria-label="Прямая ссылка на 3) Низкий уровень доверия / риск мошенничества" title="Прямая ссылка на 3) Низкий уровень доверия / риск мошенничества" translate=no>​</a></h4>
+<p><strong>Риск:</strong> пользователи не публикуют данные или боятся откликаться из-за риска передачи находки не владельцу.
+<strong>Минимизация:</strong></p>
+<ul>
+<li class="">
+<p>Общение внутри платформы без обязательной публикации контактов;</p>
+</li>
+<li class="">
+<p>Owner-check через контрольные вопросы;</p>
+</li>
+<li class="">
+<p>Лимиты на публикации и отклики;</p>
+</li>
+<li class="">
+<p>Жалоба на объявление/пользователя;</p>
+</li>
+<li class="">
+<p>Базовые антиспам-меры при подозрительной активности.</p>
+</li>
+</ul>
+<p><strong>Реакция (если риск произошёл):</strong></p>
+<ul>
+<li class="">
+<p>Быстрое скрытие/блокировка объявления по жалобам;</p>
+</li>
+<li class="">
+<p>Ограничение функциональности подозрительным аккаунтам (временный бан).</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=63-технические-риски>6.3. Технические риски<a href=#63-технические-риски class=hash-link aria-label="Прямая ссылка на 6.3. Технические риски" title="Прямая ссылка на 6.3. Технические риски" translate=no>​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=4-некорректная-работа-сопоставления>4) Некорректная работа сопоставления<a href=#4-некорректная-работа-сопоставления class=hash-link aria-label="Прямая ссылка на 4) Некорректная работа сопоставления" title="Прямая ссылка на 4) Некорректная работа сопоставления" translate=no>​</a></h4>
+<p><strong>Риск:</strong> большое число ложных совпадений снижает доверие к системе.
+<strong>Минимизация:</strong></p>
+<ul>
+<li class="">
+<p>В MVP использовать ограниченный набор параметров;</p>
+</li>
+<li class="">
+<p>Минимизировать через обязательные поля (место/время/категория/приметы).</p>
+</li>
+</ul>
+<p><strong>Реакция (если риск произошёл):</strong></p>
+<ul>
+<li class="">
+<p>Новая настройка порога совпадений и весов параметров;</p>
+</li>
+<li class="">
+<p>Добавление простого механизма обратной связи (совпадение не подходит) для улучшения качества.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=5-производительность-при-росте-базы>5) Производительность при росте базы<a href=#5-производительность-при-росте-базы class=hash-link aria-label="Прямая ссылка на 5) Производительность при росте базы" title="Прямая ссылка на 5) Производительность при росте базы" translate=no>​</a></h4>
+<p><strong>Риск:</strong> замедление поиска, карты и загрузки списков при росте количества объявлений.
+<strong>Минимизация:</strong></p>
+<ul>
+<li class="">
+<p>Индексация данных, ограничения на выдачу;</p>
+</li>
+<li class="">
+<p>Кластеризация точек на карте.</p>
+</li>
+</ul>
+<p><strong>Реакция (если риск произошёл):</strong></p>
+<ul>
+<li class="">
+<p>Оптимизация запросов и кеширование популярных выборок.</p>
+</li>
+<li class="">
+<p>Временно уменьшить число объявлений в выдаче и на карте.</p>
+</li>
+<li class="">
+<p>Упростить отображение карты (меньше деталей) до устранения причины.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=6-зависимость-от-api-яндекскарт>6) Зависимость от API Яндекс.Карт<a href=#6-зависимость-от-api-яндекскарт class=hash-link aria-label="Прямая ссылка на 6) Зависимость от API Яндекс.Карт" title="Прямая ссылка на 6) Зависимость от API Яндекс.Карт" translate=no>​</a></h4>
+<p><strong>Риск:</strong> лимиты/изменение условий/рост стоимости или недоступность API, влияние на карту и выбор точки.
+<strong>Минимизация:</strong></p>
+<ul>
+<li class="">
+<p>Не пытаться показывать на карте сразу всю Москву, отображать объявления только в выбранном районе/радиусе и ограничивать количество точек на экране.</p>
+</li>
+<li class="">
+<p>Проверять работу карты автоматически, если карта не загрузилась, фиксировать ошибку и быстро видеть это в статистике/логах.</p>
+</li>
+</ul>
+<p><strong>Реакция (если риск произошёл):</strong></p>
+<ul>
+<li class="">
+<p>Режим работы без карты: ввод адреса/района текстом;</p>
+</li>
+<li class="">
+<p>Переключение на альтернативный провайдер карт при необходимости.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=границы-и-ограничения><strong>Границы и ограничения</strong><a href=#границы-и-ограничения class=hash-link aria-label="Прямая ссылка на границы-и-ограничения" title="Прямая ссылка на границы-и-ограничения" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7-основные-функции-продукта>7. Основные функции продукта<a href=#7-основные-функции-продукта class=hash-link aria-label="Прямая ссылка на 7. Основные функции продукта" title="Прямая ссылка на 7. Основные функции продукта" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=71-входит-в-mvp>7.1 Входит в MVP<a href=#71-входит-в-mvp class=hash-link aria-label="Прямая ссылка на 7.1 Входит в MVP" title="Прямая ссылка на 7.1 Входит в MVP" translate=no>​</a></h3>
+<p>В MVP включены функции, которые закрывают ключевые боли, дают измеримые результаты по целям и KPI, реализуемы без сложных интеграций и ИИ.</p>
+<p><strong>Таблица 7-1</strong> – <strong>Обоснование функций MVP</strong></p>
+<table><thead><tr><th>Функция MVP<th>Какая боль закрывается<th>Ожидаемый эффект<th>Оценка важности<tbody><tr><td>Размещение объявлений «Потерял/Нашёл» в структурированной форме.<td>Нет единого формата, низкая сопоставимость объявлений.<td>Создаёт обязательные поля (категория, место, время, приметы), без которых невозможны корректный поиск и сопоставление. Повышает качество данных.<td><strong>Критично для MVP</strong> – без структуры невозможны поиск и сопоставление.<tr><td>Карта и выбор точки при создании объявления.<td>Слабая привязка к месту, сложно искать в нужном районе/радиусе<td>Обеспечивает точную геопривязку, делает возможным поиск рядом и повышает вероятность совпадения.<td><strong>Критично для MVP</strong> – закрывает одну из ключевых болей (место).<tr><td>Фильтры и поиск (тип, категория, время, район/радиус, текст по описанию)<td>Разрозненность и ручной поиск по лентам<td>Сокращает время поиска и снижает ручной просмотр объявлений.<td><strong>Критично для MVP</strong> – без фильтров сервис превращается в ленту.<tr><td>Сопоставление объявлений по параметрам (место/время/категория/приметы) в интерфейсе<td>Низкая сопоставимость, совпадения приходится искать вручную<td>Автоматически предлагает совпадения, ускоряет контакт сторон и влияет на долю закрытий.<td><strong>Критично для MVP</strong> – ядро ценности платформы.<tr><td>Встроенное взаимодействие (чат внутри платформы)<td>Пользователи не хотят публиковать контакты, сложно быстро связаться<td>Убирает барьер публикации, повышает отклики и снижает отказ от использования.<td><strong>Высокая важность</strong> – сильно влияет на активность и доверие.<tr><td>Owner-check (контрольные вопросы перед передачей)<td>Риски при передаче, страх отдать не тому<td>Снижает риск ошибочной передачи, повышает доверие и готовность закрывать сделки через платформу.<td><strong>Высокая важность</strong> – влияет на доверие и закрытия.<tr><td>Статусы «активно/закрыто»<td>Непонятно, актуально ли объявление<td>Поддерживает актуальность базы и позволяет считать долю успешных возвратов.<td><strong>Поддерживающая функция</strong> – усиливает управляемость и аналитику.</table>
+<p><strong>Ограничения MVP:</strong></p>
+<ul>
+<li class="">
+<p><strong>география:</strong> только Москва;</p>
+</li>
+<li class="">
+<p><strong>поиск совпадений:</strong> по параметрам (категория/место/время/приметы), без анализа фото;</p>
+</li>
+<li class="">
+<p><strong>взаимодействие:</strong> только внутри платформы, без обязательной передачи контактов;</p>
+</li>
+<li class="">
+<p><strong>статусы:</strong> “активно/закрыто”.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=72-не-входит-в-mvp>7.2 Не входит в MVP<a href=#72-не-входит-в-mvp class=hash-link aria-label="Прямая ссылка на 7.2 Не входит в MVP" title="Прямая ссылка на 7.2 Не входит в MVP" translate=no>​</a></h3>
+<p><strong>В MVP не входят:</strong></p>
+<ul>
+<li class="">
+<p>работа за пределами Москвы;</p>
+</li>
+<li class="">
+<p>сопоставление по фотографии (ИИ);</p>
+</li>
+<li class="">
+<p>отдельный функционал/кабинеты для организаций;</p>
+</li>
+<li class="">
+<p>интеграции с организациями и их базами (импорт/синхронизация/API);</p>
+</li>
+<li class="">
+<p>уведомления о возможных совпадениях.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=8-версии-продукта-и-план-развития>8. Версии продукта и план развития<a href=#8-версии-продукта-и-план-развития class=hash-link aria-label="Прямая ссылка на 8. Версии продукта и план развития" title="Прямая ссылка на 8. Версии продукта и план развития" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=81-приоритизация-moscow><strong>8.1 Приоритизация (MoSCoW)</strong><a href=#81-приоритизация-moscow class=hash-link aria-label="Прямая ссылка на 81-приоритизация-moscow" title="Прямая ссылка на 81-приоритизация-moscow" translate=no>​</a></h3>
+<p>Приоритизация функций выполнена по MoSCoW. На её основе сформирован план развития продукта по версиям.</p>
+<p><img decoding=async loading=lazy alt="Обзор продукта" src=/lostfound-docs/assets/images/concept-overview-922018bf68997c95fcd8f8cefb0a4ccb.png width=2016 height=1008 class=img_ev3q /></p>
+<p><strong>Рисунок 8-1 — Приоритизация функций по MoSCoW</strong></p>
+<p>Для формирования реалистичного плана развития функции дополнительно оценены по сложности реализации.</p>
+<p><strong>Таблица 8-1 – Оценка сложности и приоритезации функций</strong></p>
+<table><thead><tr><th>Функция<th>MoSCoW (для MVP)<th>Сложность разработки<th>Версия реализации<tbody><tr><td>Структурированные объявления (категория, описание/приметы, место, дата/время, фото)<td>MUST<td>Средняя<td>V1<tr><td>Лента объявлений и карточка<td>MUST<td>Низкая–средняя<td>V1<tr><td>Карта и выбор точки<td>MUST<td>Средняя<td>V1<tr><td>Поиск и фильтрация<td>MUST<td>Средняя<td>V1<tr><td>Сопоставление по параметрам<td>MUST<td>Средняя<td>V1<tr><td>Взаимодействие внутри платформы (чат)<td>MUST<td>Средняя<td>V1<tr><td>Owner-check<td>MUST<td>Низкая–средняя<td>V1<tr><td>Статусы «активно/закрыто»<td>MUST<td>Низкая<td>V1<tr><td>Редактирование объявлений<td>SHOULD<td>Низкая–средняя<td>V2<tr><td>Минимальная защита от спама<td>SHOULD<td>Средняя<td>V2<tr><td>Улучшение текстового сопоставления<td>SHOULD<td>Средняя<td>V2<tr><td>Уведомления о совпадениях<td>SHOULD<td>Средняя<td>V2<tr><td>Черновики<td>COULD<td>Низкая<td>V3<tr><td>Избранное<td>COULD<td>Низкая<td>V3<tr><td>Дополнительные настройки профиля<td>COULD<td>Низкая<td>V3<tr><td>Роли/кабинеты организаций<td>WILL NOT<td>Высокая<td>V3<tr><td>Интеграции с организациями<td>WILL NOT<td>Высокая<td>V3<tr><td>Масштабирование за пределы Москвы<td>WILL NOT<td>Высокая<td>V3<tr><td>Сопоставление по фото (ИИ)<td>WILL NOT<td>Высокая<td>V3</table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=82-план-развития-по-версиям>8.2. План развития по версиям<a href=#82-план-развития-по-версиям class=hash-link aria-label="Прямая ссылка на 8.2. План развития по версиям" title="Прямая ссылка на 8.2. План развития по версиям" translate=no>​</a></h3>
+<p><strong>Таблица 8-2 — План развития по версиям продукта</strong></p>
+<table><thead><tr><th>Версия<th>География<th>Цель версии<th>Состав функциональности<th>Сроки и этапы реализации<tbody><tr><td><strong>V1 (MVP)</strong><td>Москва<td>Проверка ценности сервиса и запуск полного пользовательского цикла<td>Объявления, лента и карточка, карта, фильтры, сопоставление по параметрам, чат, owner-check, статусы.<td><strong>4–6 недель.</strong><tr><td>Этап 1: форма объявления + лента + карточка.<td><td><td><td><tr><td>Этап 2: карта и фильтрация.<td><td><td><td><tr><td>Этап 3: сопоставление.<td><td><td><td><tr><td>Этап 4: чат и owner-check.<td><td><td><td><tr><td>Этап 5: тестирование и пилотный запуск.<td><td><td><td><tr><td><strong>V2</strong><td>Москва<td>Повышение эффективности поиска и качества данных<td>Редактирование объявлений, антиспам, улучшение текстового сопоставления, уведомления.<td><strong>6–8 недель.</strong><tr><td>Этап 1: редактирование и актуализация.<td><td><td><td><tr><td>Этап 2: антиспам.<td><td><td><td><tr><td>Этап 3: улучшение сопоставления.<td><td><td><td><tr><td>Этап 4: уведомления и стабилизация.<td><td><td><td><tr><td><strong>V3</strong><td>Москва и регионы<td>Расширение охвата и подключение партнёров<td>Черновики, избранное, настройки профиля, роли организаций, интеграции, расширение географии, ИИ (приоритетно после интеграций).<td><strong>3–6 месяцев.</strong><tr><td>Этап 1: черновики, избранное, настройки.<td><td><td><td><tr><td>Этап 2: кабинеты для организаций без интеграций.<td><td><td><td><tr><td>Этап 3: интеграции с организациями.<td><td><td><td><tr><td>Этап 4: добавление регионов.<td><td><td><td><tr><td>Этап 5: ИИ-сопоставление.<td><td><td><td></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=9-ограничения>9. Ограничения<a href=#9-ограничения class=hash-link aria-label="Прямая ссылка на 9. Ограничения" title="Прямая ссылка на 9. Ограничения" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=91-бюджет>9.1. Бюджет<a href=#91-бюджет class=hash-link aria-label="Прямая ссылка на 9.1. Бюджет" title="Прямая ссылка на 9.1. Бюджет" translate=no>​</a></h3>
+<p>Бюджет MVP сформирован на основе:</p>
+<ul>
+<li class="">
+<p>состава команды,</p>
+</li>
+<li class="">
+<p>длительности разработки (4–6 недель),</p>
+</li>
+<li class="">
+<p>отсутствия интеграций и ИИ,</p>
+</li>
+<li class="">
+<p>использования внешнего картографического API.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-разработка-mvp>1. Разработка MVP<a href=#1-разработка-mvp class=hash-link aria-label="Прямая ссылка на 1. Разработка MVP" title="Прямая ссылка на 1. Разработка MVP" translate=no>​</a></h4>
+<p><strong>Таблица 9-1 — Состав команды и оценка затрат</strong></p>
+<table><thead><tr><th>Роль<th>Формат участия<th>Оценка длительности<th>Оценка затрат<tbody><tr><td>Backend-разработчик<td>Полная занятость<td>1–1,5 месяца<td>120–250 тыс. ₽<tr><td>Frontend-разработчик<td>Полная занятость<td>1–1,5 месяца<td>120–250 тыс. ₽<tr><td>Системный аналитик<td>Частичная занятость<td>0,5 месяца<td>40–80 тыс. ₽<tr><td>UI/UX-дизайн (опционально)<td>Проектная работа<td>1–2 недели<td>30–80 тыс. ₽</table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=итоговая-оценка-разработки>Итоговая оценка разработки:<a href=#итоговая-оценка-разработки class=hash-link aria-label="Прямая ссылка на Итоговая оценка разработки:" title="Прямая ссылка на Итоговая оценка разработки:" translate=no>​</a></h4>
+<table><thead><tr><th>Сценарий<th>Бюджет<tbody><tr><td>Минимальный (без отдельного дизайнера)<td>250–350 тыс. ₽<tr><td>Расширенный (с отдельным дизайном)<td>450–600 тыс. ₽</table>
+<p><strong>Почему разброс:</strong></p>
+<ul>
+<li class="">
+<p>уровень ставок специалистов,</p>
+</li>
+<li class="">
+<p>наличие отдельного дизайна,</p>
+</li>
+<li class="">
+<p>сложность реализации карты и сопоставления.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=2-инфраструктура><strong>2. Инфраструктура</strong><a href=#2-инфраструктура class=hash-link aria-label="Прямая ссылка на 2-инфраструктура" title="Прямая ссылка на 2-инфраструктура" translate=no>​</a></h4>
+<p><strong>Таблица 9-2 — Ежемесячные эксплуатационные расходы</strong></p>
+<table><thead><tr><th>Статья<th>Оценка расходов<tbody><tr><td>Облачный сервер<td>6–15 тыс. ₽<tr><td>База данных<td>3–8 тыс. ₽<tr><td>Хранение фотографий<td>1–3 тыс. ₽<tr><td>Домен и SSL<td>до 3 тыс. ₽ в год</table>
+<p><strong>Итого:</strong> 10–30 тыс. ₽ в месяц.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-картографический-сервис><strong>3. Картографический сервис</strong><a href=#3-картографический-сервис class=hash-link aria-label="Прямая ссылка на 3-картографический-сервис" title="Прямая ссылка на 3-картографический-сервис" translate=no>​</a></h4>
+<p>Используется API Яндекс.Карт.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=таблица-9-3--оценка-затрат-на-карту>Таблица 9-3 — Оценка затрат на карту<a href=#таблица-9-3--оценка-затрат-на-карту class=hash-link aria-label="Прямая ссылка на Таблица 9-3 — Оценка затрат на карту" title="Прямая ссылка на Таблица 9-3 — Оценка затрат на карту" translate=no>​</a></h4>
+<table><thead><tr><th>Сценарий нагрузки<th>Оценка затрат<tbody><tr><td>Пилот (до 1000 активных объявлений)<td>В рамках бесплатных лимитов<tr><td>Рост нагрузки<td>5–15 тыс. ₽ в месяц</table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=4-внедрение><strong>4. Внедрение</strong><a href=#4-внедрение class=hash-link aria-label="Прямая ссылка на 4-внедрение" title="Прямая ссылка на 4-внедрение" translate=no>​</a></h4>
+<p>В MVP отсутствуют интеграции с внешними системами.</p>
+<p>Внедрение включает:</p>
+<ul>
+<li class="">
+<p>развёртывание инфраструктуры;</p>
+</li>
+<li class="">
+<p>публикацию сервиса;</p>
+</li>
+<li class="">
+<p>настройку домена;</p>
+</li>
+<li class="">
+<p>подготовку пользовательского соглашения и политики конфиденциальности.</p>
+</li>
+</ul>
+<p><strong>Ответственные:</strong></p>
+<ul>
+<li class="">
+<p>Backend-разработчик – развёртывание;</p>
+</li>
+<li class="">
+<p>Аналитик – документация и правила.</p>
+</li>
+</ul>
+<p>Дополнительный бюджет на внедрение не закладывается.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=5-поддержка-после-запуска>5. Поддержка после запуска<a href=#5-поддержка-после-запуска class=hash-link aria-label="Прямая ссылка на 5. Поддержка после запуска" title="Прямая ссылка на 5. Поддержка после запуска" translate=no>​</a></h4>
+<p><strong>Таблица 9-4</strong> – <strong>Поддержка</strong></p>
+<table><thead><tr><th>Направление<th>Ответственный<th>Задачи<th>Формат участия<tbody><tr><td>Техническая поддержка<td>Backend-разработчик<td>Исправление ошибок, обновления, контроль стабильности сервера<td>0,2–0,5 ставки<tr><td>Контент-модерация<td>Назначенный модератор<td>Проверка жалоб, удаление нарушающих правил объявлений<td>Частичная занятость<tr><td>Юридическая и регламентная поддержка<td>Аналитик / внешний консультант<td>Актуализация пользовательского соглашения и правил публикации<td>По необходимости</table>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=6-маркетинг>6. Маркетинг<a href=#6-маркетинг class=hash-link aria-label="Прямая ссылка на 6. Маркетинг" title="Прямая ссылка на 6. Маркетинг" translate=no>​</a></h4>
+<p>На этапе MVP отдельный маркетинговый бюджет не закладывается.
+Привлечение аудитории планируется через:</p>
+<ul>
+<li class="">
+<p>тематические сообщества,</p>
+</li>
+<li class="">
+<p>локальные каналы,</p>
+</li>
+<li class="">
+<p>партнёрские размещения.</p>
+</li>
+</ul>
+<p>При масштабировании может потребоваться выделение отдельного бюджета на продвижение.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=92-сроки>9.2. Сроки<a href=#92-сроки class=hash-link aria-label="Прямая ссылка на 9.2. Сроки" title="Прямая ссылка на 9.2. Сроки" translate=no>​</a></h3>
+<p>MVP реализуется за 5–6 недель так как:</p>
+<ul>
+<li class="">
+<p>отсутствуют интеграции;</p>
+</li>
+<li class="">
+<p>нет ИИ-анализа изображений;</p>
+</li>
+<li class="">
+<p>география ограничена Москвой;</p>
+</li>
+<li class="">
+<p>сопоставление реализуется по параметрам, без ML.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=этапы-реализации>Этапы реализации<a href=#этапы-реализации class=hash-link aria-label="Прямая ссылка на Этапы реализации" title="Прямая ссылка на Этапы реализации" translate=no>​</a></h4>
+<p><strong>Таблица 9-5</strong> – <strong>План работ</strong></p>
+<table><thead><tr><th>Этап<th>Содержание<th>Срок<tbody><tr><td>1<td>Уточнение требований, схема данных, API, прототипы<td>1 неделя<tr><td>2<td>Реализация объявлений, ленты, карточки<td>2 недели<tr><td>3<td>Интеграция карты и фильтрации<td>1 неделя<tr><td>4<td>Сопоставление, чат, owner-check<td>1 неделя<tr><td>5<td>Тестирование, исправления, подготовка пилота<td>1 неделя</table>
+<p>Разработка ведётся итеративно: после каждого этапа доступна рабочая версия с расширенным функционалом.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=93-ресурсы>9.3. Ресурсы<a href=#93-ресурсы class=hash-link aria-label="Прямая ссылка на 9.3. Ресурсы" title="Прямая ссылка на 9.3. Ресурсы" translate=no>​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=команда-mvp>Команда MVP<a href=#команда-mvp class=hash-link aria-label="Прямая ссылка на Команда MVP" title="Прямая ссылка на Команда MVP" translate=no>​</a></h4>
+<ul>
+<li class="">
+<p>Backend-разработчик</p>
+</li>
+<li class="">
+<p>Frontend-разработчик</p>
+</li>
+<li class="">
+<p>Системный аналитик</p>
+</li>
+<li class="">
+<p>UI/UX-дизайнер (при необходимости)</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id=дополнительные-ресурсы>Дополнительные ресурсы<a href=#дополнительные-ресурсы class=hash-link aria-label="Прямая ссылка на Дополнительные ресурсы" title="Прямая ссылка на Дополнительные ресурсы" translate=no>​</a></h4>
+<p>После запуска потребуются:</p>
+<ul>
+<li class="">
+<p>техническая поддержка (backend);</p>
+</li>
+<li class="">
+<p>модерация контента;</p>
+</li>
+<li class="">
+<p>юридическая подготовка пользовательского соглашения и политики конфиденциальности.</p>
+</li>
+</ul>
+<p>Юридические документы могут быть подготовлены аналитиком на основе типовых шаблонов и при необходимости проверены внешним консультантом.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=94-технические-и-продуктовые-ограничения>9.4. Технические и продуктовые ограничения<a href=#94-технические-и-продуктовые-ограничения class=hash-link aria-label="Прямая ссылка на 9.4. Технические и продуктовые ограничения" title="Прямая ссылка на 9.4. Технические и продуктовые ограничения" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p>MVP ограничен географией: публикация и поиск объявлений доступны только в пределах Москвы.</p>
+</li>
+<li class="">
+<p>Сопоставление объявлений выполняется по параметрам (категория, место, время, приметы/описание); анализ фото в MVP не используется.</p>
+</li>
+<li class="">
+<p>Интеграция с картой реализуется через API Яндекс.Карт. и зависит от его доступности и лимитов.</p>
+</li>
+<li class="">
+<p>В MVP нет отдельных ролей/кабинетов для организаций и нет интеграций с их базами.</p>
+</li>
+<li class="">
+<p>Платформа обрабатывает персональные данные пользователей (аккаунт, переписка, фото, геометки), поэтому до публичного запуска требуется пользовательское соглашение и политика конфиденциальности, а также правила публикации фото документов/персональных данных.</p>
+</li>
+<li class="">
+<p>Для категорий "документы" и "ключи" в MVP вводятся ограничения на фото (запрет публикации полных данных/серии и номера) и удаление по жалобе.</p>
+</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Страница документа"><a class="pagination-nav__link pagination-nav__link--prev" href=/lostfound-docs/docs/category/продукт><div class=pagination-nav__sublabel>Предыдущая страница</div><div class=pagination-nav__label>Продукт</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/lostfound-docs/docs/category/discovery><div class=pagination-nav__sublabel>Следующая страница</div><div class=pagination-nav__label>Discovery</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#lostfound--платформа-поиска-потерянных-вещей-и-домашних-животных class="table-of-contents__link toc-highlight">Lost&Found – платформа поиска потерянных вещей и домашних животных.</a><li><a href=#бизнес-требования class="table-of-contents__link toc-highlight">Бизнес-требования</a><li><a href=#1-описание-проблемы class="table-of-contents__link toc-highlight">1. Описание проблемы</a><ul><li><a href=#проблема class="table-of-contents__link toc-highlight">Проблема</a><li><a href=#потребности-и-боли class="table-of-contents__link toc-highlight">Потребности и боли</a><li><a href=#текущие-альтернативы class="table-of-contents__link toc-highlight">Текущие альтернативы</a><li><a href=#почему-текущие-решения-недостаточны class="table-of-contents__link toc-highlight">Почему текущие решения недостаточны</a></ul><li><a href=#2-целевая-аудитория class="table-of-contents__link toc-highlight">2. Целевая аудитория</a><ul><li><a href=#сегменты-аудитории class="table-of-contents__link toc-highlight">Сегменты аудитории</a><li><a href=#потребности-и-ожидания class="table-of-contents__link toc-highlight">Потребности и ожидания</a></ul><li><a href=#3-стейкхолдеры class="table-of-contents__link toc-highlight">3. Стейкхолдеры</a><ul><li><a href=#ключевые-стейкхолдеры class="table-of-contents__link toc-highlight">Ключевые стейкхолдеры</a><li><a href=#роль-стейкхолдеров class="table-of-contents__link toc-highlight">Роль стейкхолдеров</a></ul><li><a href=#4-бизнес-цели-и-ключевые-метрики class="table-of-contents__link toc-highlight">4. Бизнес-цели и ключевые метрики</a><ul><li><a href=#основные-бизнес-цели class="table-of-contents__link toc-highlight">Основные бизнес-цели</a><li><a href=#ключевые-метрики-kpis class="table-of-contents__link toc-highlight">Ключевые метрики (KPIs)</a></ul><li><a href=#5-описание-продукта class="table-of-contents__link toc-highlight">5. Описание продукта</a><ul><li><a href=#51-общая-концепция class="table-of-contents__link toc-highlight">5.1 Общая концепция</a><li><a href=#52-ключевые-функции class="table-of-contents__link toc-highlight">5.2 Ключевые функции</a></ul><li><a href=#6-риски class="table-of-contents__link toc-highlight">6. Риски</a><ul><li><a href=#61-продуктовые-риски class="table-of-contents__link toc-highlight">6.1. Продуктовые риски</a><li><a href=#62-риски-доверия-и-безопасности class="table-of-contents__link toc-highlight">6.2. Риски доверия и безопасности</a><li><a href=#63-технические-риски class="table-of-contents__link toc-highlight">6.3. Технические риски</a></ul><li><a href=#границы-и-ограничения class="table-of-contents__link toc-highlight"><strong>Границы и ограничения</strong></a><li><a href=#7-основные-функции-продукта class="table-of-contents__link toc-highlight">7. Основные функции продукта</a><ul><li><a href=#71-входит-в-mvp class="table-of-contents__link toc-highlight">7.1 Входит в MVP</a><li><a href=#72-не-входит-в-mvp class="table-of-contents__link toc-highlight">7.2 Не входит в MVP</a></ul><li><a href=#8-версии-продукта-и-план-развития class="table-of-contents__link toc-highlight">8. Версии продукта и план развития</a><ul><li><a href=#81-приоритизация-moscow class="table-of-contents__link toc-highlight"><strong>8.1 Приоритизация (MoSCoW)</strong></a><li><a href=#82-план-развития-по-версиям class="table-of-contents__link toc-highlight">8.2. План развития по версиям</a></ul><li><a href=#9-ограничения class="table-of-contents__link toc-highlight">9. Ограничения</a><ul><li><a href=#91-бюджет class="table-of-contents__link toc-highlight">9.1. Бюджет</a><li><a href=#92-сроки class="table-of-contents__link toc-highlight">9.2. Сроки</a><li><a href=#93-ресурсы class="table-of-contents__link toc-highlight">9.3. Ресурсы</a><li><a href=#94-технические-и-продуктовые-ограничения class="table-of-contents__link toc-highlight">9.4. Технические и продуктовые ограничения</a></ul></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Разделы</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/lostfound-docs/docs/intro>Карточка сервиса</a><li class=footer__item><a class=footer__link-item href=/lostfound-docs/docs/category/требования>Требования</a><li class=footer__item><a class=footer__link-item href=/lostfound-docs/docs/category/api>API</a><li class=footer__item><a class=footer__link-item href=/lostfound-docs/docs/category/uml>Диаграммы</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Публикация</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://github.com/LizaErdakova/lostfound-docs target=_blank rel="noopener noreferrer" class=footer__link-item>Репозиторий<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a href=https://LizaErdakova.github.io/lostfound-docs/ target=_blank rel="noopener noreferrer" class=footer__link-item>GitHub Pages<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Copyright © 2026 Lost&Found. Built with Docusaurus.</div></div></div></footer></div></body>
