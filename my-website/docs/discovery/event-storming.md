@@ -1,14 +1,14 @@
 ---
 title: Event Storming
 sidebar_position: 3
-description: Шаблон артефакта Event Storming для процесса Owner-check.
+description: Event Storming для процесса Owner-check.
 ---
 
 ## Назначение
 
-Event Storming используется для выявления ключевых событий, команд, участников и проблемных мест в процессе Owner-check.
+Event Storming показывает ключевые события, команды, участников и спорные места в процессе Owner-check.
 
-## Ссылка на доску
+## Доска
 
 [Открыть доску Event Storming](https://unidraw.io/app/board/3dc8a725627b735ba92e)
 

@@ -8,6 +8,10 @@ description: Use Case диаграмма основных сценариев Los
 
 Диаграмма показывает роли пользователей и основные сценарии работы с системой Lost&Found.
 
+## Исходная диаграмма
+
+![Use Case диаграмма Lost&Found](/img/diagrams/use-case.png)
+
 ## Use Case диаграмма
 
 ```plantuml Use Case Lost&Found
