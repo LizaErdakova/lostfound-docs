@@ -1,28 +1,26 @@
 ---
-title: ER-диаграмма
+title: ER-диаграммы
 sidebar_position: 2
-description: ER-диаграмма модели данных Lost&Found MVP.
+description: Концептуальная, логическая и физическая модели данных Lost&Found MVP.
 ---
 
 import Drawio from '@theme/Drawio';
-import model from '!!raw-loader!./model.drawio';
+import conceptualModel from '!!raw-loader!./conceptual-model.drawio';
+import logicalModel from '!!raw-loader!./logical-model.drawio';
+import physicalModel from '!!raw-loader!./physical-model.drawio';
 
-## ER-диаграмма
+## Концептуальная модель
 
-<Drawio content={model} toolbar="zoom layers lightbox" maxHeight={640} />
+<Drawio content={conceptualModel} toolbar="zoom layers lightbox" maxHeight={560} />
+
+## Логическая модель
+
+<Drawio content={logicalModel} toolbar="zoom layers lightbox" maxHeight={680} />
+
+## Физическая модель
+
+<Drawio content={physicalModel} toolbar="zoom layers lightbox" maxHeight={680} />
 
 :::note
-Диаграмма отражает основные сущности системы и связи между ними. Редактируемая версия файла model.drawio находится рядом с этой страницей в репозитории.
+Диаграммы отражают основные сущности системы и связи между ними. Редактируемые версии находятся рядом с этой страницей в репозитории: conceptual-model.drawio, logical-model.drawio и physical-model.drawio.
 :::
-
-## Основные сущности
-
-- Пользователь.
-- Объявление.
-- Категория.
-- Фото.
-- Отклик.
-- Диалог.
-- Сообщение.
-- Owner-check.
-- Жалоба.
