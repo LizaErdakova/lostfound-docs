@@ -28,3 +28,22 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.theme-doc-markdown table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.theme-doc-markdown th,
+.theme-doc-markdown td {
+  min-width: 9rem;
+  vertical-align: top;
+  white-space: normal;
+}
+
+.theme-doc-markdown th:first-child,
+.theme-doc-markdown td:first-child {
+  min-width: 7rem;
+}
