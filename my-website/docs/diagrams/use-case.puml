@@ -1,16 +1,3 @@
----
-title: Use Case диаграмма
-sidebar_position: 1
-description: Use Case диаграмма основных сценариев Lost&Found MVP.
----
-
-## Назначение
-
-Диаграмма показывает роли пользователей и основные сценарии работы с системой Lost&Found.
-
-## Use Case диаграмма
-
-```plantuml Use Case Lost&Found
 @startuml
 left to right direction
 
@@ -55,8 +42,3 @@ UC10 ..> UC11 : <<include>>
 UC4 <.. UC3 : <<extend>>
 UC5 <.. UC6 : <<extend>>
 @enduml
-```
-
-:::note
-Редактируемая версия файла use-case.puml находится рядом с этой страницей в репозитории.
-:::
