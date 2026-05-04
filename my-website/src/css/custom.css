@@ -47,3 +47,15 @@
 .theme-doc-markdown td:first-child {
   min-width: 7rem;
 }
+
+.wide-diagram {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.wide-diagram img {
+  display: block;
+  height: auto;
+  max-width: none;
+  width: 90rem;
+}

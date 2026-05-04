@@ -105,7 +105,7 @@ const config = {
             title: 'Документация',
             items: [
               {label: 'Карточка сервиса', to: '/docs/intro'},
-              {label: 'API Reference', to: '/docs/api/rest-api'},
+              {label: 'Справочник API', to: '/docs/api/rest-api'},
               {label: 'Модель данных', to: '/docs/database/data-model'},
               {label: 'ER-диаграмма', to: '/docs/database/er-diagram'},
             ],

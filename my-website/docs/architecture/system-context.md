@@ -1,6 +1,7 @@
 ---
 title: Контекст системы
 sidebar_position: 2
+draft: true
 description: Системный контекст Lost&Found MVP.
 ---
 
